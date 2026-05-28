@@ -65,7 +65,7 @@ SnakesLadders.Tests/     -> Pruebas unitarias con xUnit
 
 ### Objetivo
 
-> Como programamos el movimiento para que hoy funcione de forma basica, pero que manana sea facil agregar modificaciones sin tener que rehacer todo el codigo?
+> Como programamos el movimiento para que hoy funcione de forma basica, pero que mañana sea facil agregar modificaciones sin tener que rehacer todo el código?
 
 La respuesta esta en disenar cada clase con una sola responsabilidad y que las dependencias apunten hacia abstracciones, no hacia implementaciones concretas. Esto permite extender el comportamiento del juego (nuevas reglas, nuevos tipos de dado, multiples jugadores) sin modificar el codigo que ya funciona.
 
