@@ -28,4 +28,24 @@ public class TokenMovementTests
         _board.Move(_token, 4);
         Assert.Equal(8, _token.Position);
     }
+
+    [Fact]
+    public void Token_LandsOnHundred_AndPlayerWins_WhenMovedExactly()
+    {
+        _token.MoveTo(97);
+        bool hasWon = _board.Move(_token, 3);
+
+        Assert.Equal(100, _token.Position);
+        Assert.True(hasWon);
+    }
+
+    [Fact]
+    public void Token_StaysOnSquare97_AndPlayerDoesNotWin_WhenOvershoot()
+    {
+        _token.MoveTo(97);
+        bool hasWon = _board.Move(_token, 4);
+
+        Assert.Equal(97, _token.Position);
+        Assert.False(hasWon);
+    }
 }
