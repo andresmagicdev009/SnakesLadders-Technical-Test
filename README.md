@@ -27,6 +27,30 @@ dotnet run --project SnakesLadders.Console
 dotnet test
 ```
 
+## Arquitectura
+
+```mermaid
+graph TD
+    SLN["SnakesLadders.sln · .NET 10"]
+
+    CORE["SnakesLadders.Core
+    classlib · logica de negocio"]
+
+    CONSOLE["SnakesLadders.Console
+    console · entrada / salida"]
+
+    TESTS["SnakesLadders.Tests
+    xunit · UATs automatizadas"]
+
+    SLN --> CORE
+    SLN --> CONSOLE
+    SLN --> TESTS
+    CONSOLE --> CORE
+    TESTS --> CORE
+```
+
+`SnakesLadders.Core` es el unico proyecto sin dependencias externas. `Console` y `Tests` referencian `Core` pero no se conocen entre si.
+
 ## Estructura del proyecto
 
 ```
